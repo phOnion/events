@@ -65,7 +65,7 @@ class Manager implements ManagerInterface
      *
      * @return void
      */
-    public function trigger(EventInterface $event, EventTargetInterface $target)
+    public function trigger(EventInterface $event, EventTargetInterface $target = null)
     {
         if (isset($this->listeners[$event->getName()])) {
             foreach ($this->listeners[$event->getName()] as $listener) {
@@ -73,7 +73,7 @@ class Manager implements ManagerInterface
                     break;
                 }
 
-                $target = $listener[0]->handle($event, $target);
+                $target = $listener[0]->handle($event, $target ?? new NullTarget());
             }
         }
     }
