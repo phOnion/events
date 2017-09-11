@@ -63,7 +63,7 @@ class Manager implements ManagerInterface
      * @param EventInterface $event
      * @param EventTargetInterface $target
      *
-     * @return void
+     * @return mixed
      */
     public function trigger(EventInterface $event, EventTargetInterface $target = null)
     {
@@ -75,6 +75,8 @@ class Manager implements ManagerInterface
 
                 $target = $listener[0]->handle($event, $target ?? new NullTarget());
             }
+
+            return $target;
         }
     }
 }
