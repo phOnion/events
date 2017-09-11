@@ -43,5 +43,5 @@ interface ManagerInterface
      *
      * @return mixed
      */
-    public function trigger(EventInterface $event, EventTargetInterface $target);
+    public function trigger(EventInterface $event, EventTargetInterface $target = null);
 }
