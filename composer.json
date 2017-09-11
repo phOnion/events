@@ -1,0 +1,8 @@
+{
+  "name": "onion/events",
+  "autoload": {
+    "psr-4": {
+      "Onion\\": "src/"
+    }
+  }
+}
