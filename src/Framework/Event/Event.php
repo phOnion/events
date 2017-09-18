@@ -4,7 +4,7 @@ namespace Onion\Framework\Event;
 
 use Onion\Framework\Event\Interfaces\EventInterface;
 
-class GenericEvent implements EventInterface
+class Event implements EventInterface
 {
     use EventTrait;
 
@@ -25,6 +25,6 @@ class GenericEvent implements EventInterface
 
     public function getSource(): string
     {
-        return $this->source;
+        return (string) $this->source;
     }
 }

@@ -14,20 +14,20 @@ interface ManagerInterface
      * Register an event with the current handler
      *
      * @param string $name
-     * @param HandlerInterface $handler
+     * @param callable $handler
      * @param int $priority
      * @return void
      */
-    public function attach(string $name, HandlerInterface $handler, int $priority = 1);
+    public function attach(string $name, callable $handler, int $priority = 1);
 
     /**
      * Remove a handler from listening for an event
      *
      * @param string $name
-     * @param HandlerInterface $handler
+     * @param callable $handler
      * @return void
      */
-    public function detach(string $name, HandlerInterface $handler);
+    public function detach(string $name, callable $handler);
 
     /**
      * Remove all registered handlers for an event
@@ -39,9 +39,9 @@ interface ManagerInterface
 
     /**
      * @param EventInterface $event
-     * @param EventTargetInterface $target
+     * @param object $source
      *
      * @return mixed
      */
-    public function trigger(EventInterface $event, EventTargetInterface $target = null);
+    public function trigger(EventInterface $event, $source = null);
 }
