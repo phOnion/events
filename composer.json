@@ -4,5 +4,10 @@
     "psr-4": {
       "Onion\\": "src/"
     }
+  },
+  "require": {
+    "psr/event-dispatcher": "^1.0",
+    "fig/event-dispatcher-util": "^1.1",
+    "onion/interfaces": "dev-master"
   }
 }
